@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /*  overflow: hidden; */
+  min-height: calc(var(--vh, 1vh) * 100);
+}
+
+form {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  /*  height: 50px; */
+  flex-direction: column;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.formrow {
+  display: flex;
+  gap: 15px;
+}
+
+canvas {
+  border: orange solid 3px;
+  margin: 0 10px 0;
+
+  background-image: linear-gradient(rgb(210 213 219) 1px, transparent 1px),
+    linear-gradient(to right, rgb(210 213 219) 1px, rgb(240 241 245) 1px);
+  background-size: 25px 25px;
+}
+
+.inputbox {
+  display: inline-block;
+}
+
+button {
+  width: 100px;
+  height: 25px;
+  border-radius: 5px;
+  background: dodgerblue;
+  color: #fff;
+  border: #fff;
+  cursor: pointer;
+}
+button:hover {
+  background: linear-gradient(45deg, greenyellow, dodgerblue);
+}
+
+input[type="number"] {
+  padding: 3px;
+  /* font-size: 1rem; */
+}
+
+input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  /* transform: translatex(1px); */
+}

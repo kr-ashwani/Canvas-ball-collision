@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Circles</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <form id="ballsInfo">
+      <div class="formrow">
+        <label for="ballsNum">No. of balls</label>
+        <input id="ballsNum" type="number" value="10" min="0" max="900" />
+        <label for="ballsSize">Balls Size in px</label>
+        <input id="ballsSize" type="number" value="25" min="0" max="900" />
+      </div>
+      <div class="formrow">
+        <input id="colorCol" type="checkbox" checked />
+        <label for="colorCol">Change color on Colision</label>
+      </div>
+      <div class="inputbox">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+    <canvas></canvas>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
