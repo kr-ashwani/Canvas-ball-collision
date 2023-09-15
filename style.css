@@ -52,7 +52,7 @@ button:hover {
 }
 
 input[type="number"] {
-  padding: 3px;
+  padding: 1px;
   width: 60px;
   /* font-size: 1rem; */
 }
@@ -63,8 +63,4 @@ input[type="checkbox"] {
   margin-top: 4px;
   margin-left: 10px;
   /* transform: translatex(1px); */
-}
-
-.velRow {
-  /* margin-left: -35px; */
 }

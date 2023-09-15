@@ -89,7 +89,7 @@ const initializeBalls = (e) => {
     }
     if (2 * BALLS_RADIUS >= canvas.height || 2 * BALLS_RADIUS >= canvas.width) {
       alert(
-        `Try reducing balls size as new balls are fitting inti the screen.\n\nMaximum number of balls that will be generated with balls radius ${BALLS_RADIUS} is ${balls.length}`
+        `Try reducing balls size as new balls are not fitting into the screen.\n\nMaximum number of balls that will be generated with balls radius ${BALLS_RADIUS} is ${balls.length}`
       );
       break;
     }
