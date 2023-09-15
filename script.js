@@ -28,7 +28,14 @@ function Ball() {
   this.mass = 1;
   let randX, randY;
   let i = 0;
+  const currentTime = new Date().getTime();
   do {
+    if ((new Date().getTime() - currentTime) / 1000 > 0.1) {
+      alert(
+        "Try reducing balls size or balls number as new balls are not getting free space to spawn"
+      );
+      return null;
+    }
     if (i === 0) {
       randX = randInt(this.r, canvas.width - this.r);
       randY = randInt(this.r, canvas.height - this.r);
@@ -60,6 +67,7 @@ function Ball() {
     ctx.fill();
   };
   this.lastCollided = false;
+  this.ballSpawned = true;
 }
 
 const balls = [];
@@ -68,7 +76,12 @@ const initializeBalls = (e) => {
   TOTAL_BALLS = Number(document.getElementById("ballsNum").value);
   BALLS_RADIUS = Number(document.getElementById("ballsSize").value);
   balls.length = 0;
-  for (let i = 0; i < TOTAL_BALLS; i++) balls.push(new Ball());
+  let newBall = null;
+  for (let i = 0; i < TOTAL_BALLS; i++) {
+    newBall = new Ball();
+    if (newBall.ballSpawned) balls.push(newBall);
+    else break;
+  }
 };
 
 initializeBalls();
