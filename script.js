@@ -10,7 +10,6 @@ const setCanvasDimensions = () => {
   canvas.width = window.innerWidth - 25;
   canvas.height =
     window.innerHeight - 40 - document.getElementById("ballsInfo").clientHeight;
-  console.log(document.getElementById("ballsInfo").clientHeight);
 };
 
 setVh(window);
@@ -57,7 +56,6 @@ function Ball() {
   const ballsMaxVel = Number(document.getElementById("ballsMaxVel").value);
   this.speedX = randInt(ballsMinVel, ballsMaxVel);
   this.speedY = randInt(ballsMinVel, ballsMaxVel);
-  console.log(ballsMinVel, ballsMaxVel);
   this.color = `orange`;
   this.draw = () => {
     ctx.beginPath();
