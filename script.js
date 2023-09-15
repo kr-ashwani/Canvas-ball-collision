@@ -22,6 +22,7 @@ RandomValues(window);
 
 let TOTAL_BALLS = 60; // will be updated by user
 let BALLS_RADIUS = 30; // will be updated by user
+let cancelReqFrame = { value: null };
 
 function Ball() {
   this.r = BALLS_RADIUS;
@@ -75,6 +76,7 @@ function Ball() {
 const balls = [];
 const initializeBalls = (e) => {
   if (e) e.preventDefault();
+  //alert("hello");
   TOTAL_BALLS = Number(document.getElementById("ballsNum").value);
   BALLS_RADIUS = Number(document.getElementById("ballsSize").value);
   balls.length = 0;
@@ -98,6 +100,7 @@ const initializeBalls = (e) => {
     else break;
   }
 
+  //alert(balls.length);
   document.getElementById("ballsNum").value = balls.length;
 };
 
@@ -122,9 +125,13 @@ const animate = () => {
     balls[i].draw();
   }
 
-  if (balls.length) requestAnimationFrame(animate);
+  if (balls.length) cancelReqFrame.value = requestAnimationFrame(animate);
 };
 
 animate();
 
-ballsInfo.addEventListener("submit", (e) => initializeBalls(e));
+ballsInfo.addEventListener("submit", (e) => {
+  initializeBalls(e);
+  cancelAnimationFrame(cancelReqFrame.value);
+  animate();
+});
