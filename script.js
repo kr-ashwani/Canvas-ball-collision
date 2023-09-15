@@ -55,8 +55,9 @@ function Ball() {
   } while (++i < balls.length);
   const ballsMinVel = Number(document.getElementById("ballsMinVel").value);
   const ballsMaxVel = Number(document.getElementById("ballsMaxVel").value);
-  this.speedX = randIntExcept(ballsMinVel, ballsMaxVel, 0);
-  this.speedY = randIntExcept(ballsMaxVel, ballsMaxVel, 0);
+  this.speedX = randInt(ballsMinVel, ballsMaxVel);
+  this.speedY = randInt(ballsMinVel, ballsMaxVel);
+  console.log(ballsMinVel, ballsMaxVel);
   this.color = `orange`;
   this.draw = () => {
     ctx.beginPath();
@@ -76,7 +77,7 @@ function Ball() {
 const balls = [];
 const initializeBalls = (e) => {
   if (e) e.preventDefault();
-  //alert("hello");
+
   TOTAL_BALLS = Number(document.getElementById("ballsNum").value);
   BALLS_RADIUS = Number(document.getElementById("ballsSize").value);
   balls.length = 0;
@@ -100,7 +101,6 @@ const initializeBalls = (e) => {
     else break;
   }
 
-  //alert(balls.length);
   document.getElementById("ballsNum").value = balls.length;
 };
 
