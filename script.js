@@ -79,7 +79,7 @@ const initializeBalls = (e) => {
   let newBall = null;
   const currentTime = new Date().getTime();
   for (let i = 0; i < TOTAL_BALLS; i++) {
-    if ((new Date().getTime() - currentTime) / 1000 > 2) {
+    if ((new Date().getTime() - currentTime) / 1000 > 3) {
       alert(
         `Try reducing balls size or balls number as new balls are taking long time spawn.\n\nMaximum number of balls that will be generated with balls radius ${BALLS_RADIUS} is ${balls.length}`
       );
