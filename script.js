@@ -52,8 +52,10 @@ function Ball() {
     this.x = randX;
     this.y = randY;
   } while (++i < balls.length);
-  this.speedX = randIntExcept(-3, 3, 0);
-  this.speedY = randIntExcept(-3, 3, 0);
+  const ballsMinVel = Number(document.getElementById("ballsMinVel").value);
+  const ballsMaxVel = Number(document.getElementById("ballsMaxVel").value);
+  this.speedX = randIntExcept(ballsMinVel, ballsMaxVel, 0);
+  this.speedY = randIntExcept(ballsMaxVel, ballsMaxVel, 0);
   this.color = `orange`;
   this.draw = () => {
     ctx.beginPath();
