@@ -13,6 +13,7 @@ const setCanvasDimensions = () => {
   console.log(document.getElementById("ballsInfo").clientHeight);
 };
 
+setVh(window);
 window.addEventListener("resize", () => setVh(window));
 setCanvasDimensions();
 window.addEventListener("resize", setCanvasDimensions);
