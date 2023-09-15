@@ -32,7 +32,7 @@ function Ball() {
   do {
     if ((new Date().getTime() - currentTime) / 1000 > 0.1) {
       alert(
-        "Try reducing balls size or balls number as new balls are not getting free space to spawn"
+        `Try reducing balls size or balls number as new balls are not getting free space to spawn.\n\nMaximum number of balls that will be generated with balls radius ${BALLS_RADIUS} is ${balls.length}`
       );
       return null;
     }
@@ -82,6 +82,8 @@ const initializeBalls = (e) => {
     if (newBall.ballSpawned) balls.push(newBall);
     else break;
   }
+
+  document.getElementById("ballsNum").value = balls.length;
 };
 
 initializeBalls();
