@@ -80,9 +80,6 @@ const collisionBetweenTwoBalls = (ball1, ball2, i, j) => {
 
       ball1.lastCollided = true;
       ball2.lastCollided = true;
-      ball1.solvedCollision = true;
-      ball2.solvedCollision = true;
-      console.log("collided");
     }
   }
 };

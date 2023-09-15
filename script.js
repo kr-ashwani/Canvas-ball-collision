@@ -20,8 +20,8 @@ window.addEventListener("resize", setCanvasDimensions);
 
 RandomValues(window);
 
-let TOTAL_BALLS = 60;
-let BALLS_RADIUS = 30;
+let TOTAL_BALLS = 60; // will be updated by user
+let BALLS_RADIUS = 30; // will be updated by user
 
 function Ball() {
   this.r = BALLS_RADIUS;
@@ -111,7 +111,4 @@ const animate = () => {
 
 animate();
 
-ballsInfo.addEventListener("submit", (e) => {
-  console.log(e);
-  initializeBalls(e);
-});
+ballsInfo.addEventListener("submit", (e) => initializeBalls(e));
