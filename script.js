@@ -119,7 +119,8 @@ const animate = () => {
 
     balls[i].draw();
   }
-  requestAnimationFrame(animate);
+
+  if (balls.length) requestAnimationFrame(animate);
 };
 
 animate();
